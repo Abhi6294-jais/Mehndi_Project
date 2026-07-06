@@ -2675,14 +2675,22 @@ body {
 }
 
 .feedback-form textarea {
+  width: 100%;
+  padding: 1.2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
   resize: vertical;
   background: var(--clr-cream);
   border: 1px solid rgba(var(--clr-brown-rgb), 0.2);
+  transition: all 0.3s ease;
 }
 
 .feedback-form textarea:focus {
   border-color: var(--clr-gold);
   background: white;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--clr-gold-rgb), 0.1);
 }
 
 @media (max-width: 768px) {
@@ -2690,6 +2698,19 @@ body {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-section {
+    padding: 3rem 0;
+  }
+  .feedback-card {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .feedback-content h2 {
+    font-size: 1.5rem;
   }
 }
 
