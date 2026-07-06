@@ -8,7 +8,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================
-  //  LANGUAGE TOGGLE (EN / HI)
+  //  0. FIREBASE INITIALIZATION
+  // ==========================================================
+  const firebaseConfig = {
+    apiKey: "AIzaSyC90KyC2p3XBIO_5SOoUGlH6_hBf6XKYJI",
+    authDomain: "khushi-mehndi.firebaseapp.com",
+    projectId: "khushi-mehndi",
+    storageBucket: "khushi-mehndi.firebasestorage.app",
+    messagingSenderId: "474927963538",
+    appId: "1:474927963538:web:164b8def78f540ed09354b",
+    measurementId: "G-KM3Q8DVWLF"
+  };
+
+  // Initialize Firebase (using compat library from CDN)
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const db = firebase.firestore();
+
+  // ==========================================================
+  //  1. NAVIGATION & MOBILE MENU
   // ==========================================================
   const langToggle = document.getElementById('langToggle');
   const langText = langToggle?.querySelector('.lang-text');
@@ -1414,23 +1433,64 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    // Helpful button logic
+    // Helpful button logic (Firebase Firestore + LocalStorage)
+    const reviewId = 'rev_' + btoa((review.name || '') + (review.title || '')).replace(/[^a-zA-Z0-9]/g, '').substring(0, 20);
     const helpfulBtn = card.querySelector('.review-helpful');
     const helpfulCountSpan = card.querySelector('.helpful-count');
-    let isLiked = false;
-    let currentCount = review.helpful || 1;
+    
+    // Check local storage to see if this specific user already liked it
+    let likedReviews = JSON.parse(localStorage.getItem('liked_reviews') || '{}');
+    let isLiked = !!likedReviews[reviewId];
+    
+    if (isLiked) {
+      helpfulBtn.classList.add('liked');
+    }
 
-    helpfulBtn.addEventListener('click', () => {
-      if (!isLiked) {
-        isLiked = true;
-        currentCount++;
+    let currentCount = review.helpful || 1;
+    helpfulCountSpan.textContent = currentCount;
+
+    // Listen to real-time updates from Firestore
+    const docRef = db.collection('helpfulCounts').doc(reviewId);
+    
+    // Using onSnapshot for real-time live updates!
+    docRef.onSnapshot((doc) => {
+      if (doc.exists) {
+        currentCount = doc.data().count;
         helpfulCountSpan.textContent = currentCount;
-        helpfulBtn.classList.add('liked');
       } else {
-        isLiked = false;
-        currentCount--;
-        helpfulCountSpan.textContent = currentCount;
+        // Initialize the document with the default count if it doesn't exist yet
+        docRef.set({ count: currentCount }).catch(err => console.error("Firebase write error:", err));
+      }
+    });
+
+    helpfulBtn.addEventListener('click', async () => {
+      // Re-fetch local state just in case
+      likedReviews = JSON.parse(localStorage.getItem('liked_reviews') || '{}');
+      isLiked = !!likedReviews[reviewId];
+
+      // Optimistic UI update
+      if (!isLiked) {
+        helpfulBtn.classList.add('liked');
+        helpfulCountSpan.textContent = currentCount + 1;
+      } else {
         helpfulBtn.classList.remove('liked');
+        helpfulCountSpan.textContent = Math.max(0, currentCount - 1);
+      }
+
+      try {
+        if (!isLiked) {
+          // Like
+          likedReviews[reviewId] = true;
+          localStorage.setItem('liked_reviews', JSON.stringify(likedReviews));
+          await docRef.set({ count: firebase.firestore.FieldValue.increment(1) }, { merge: true });
+        } else {
+          // Unlike
+          delete likedReviews[reviewId];
+          localStorage.setItem('liked_reviews', JSON.stringify(likedReviews));
+          await docRef.set({ count: firebase.firestore.FieldValue.increment(-1) }, { merge: true });
+        }
+      } catch (err) {
+        console.error("Failed to update like count in Firebase:", err);
       }
     });
 
