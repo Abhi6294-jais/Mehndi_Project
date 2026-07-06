@@ -584,6 +584,41 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
+    // Fullscreen and Unmute on Click
+    slides.forEach(slide => {
+      const video = slide.querySelector('video');
+      if (video) {
+        // Prevent click from dragging/swiping
+        video.style.cursor = 'pointer';
+        video.title = 'Click to view fullscreen';
+        
+        video.addEventListener('click', (e) => {
+          // Open fullscreen
+          if (video.requestFullscreen) {
+            video.requestFullscreen();
+          } else if (video.webkitRequestFullscreen) { /* Safari */
+            video.webkitRequestFullscreen();
+          } else if (video.msRequestFullscreen) { /* IE11 */
+            video.msRequestFullscreen();
+          }
+          
+          // Unmute video when in fullscreen
+          video.muted = false;
+          
+          // Listen for exiting fullscreen to mute again
+          const exitFullscreenHandler = () => {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+              video.muted = true;
+            }
+          };
+          
+          document.addEventListener('fullscreenchange', exitFullscreenHandler);
+          document.addEventListener('webkitfullscreenchange', exitFullscreenHandler);
+          document.addEventListener('msfullscreenchange', exitFullscreenHandler);
+        });
+      }
+    });
+
     // Build dots
     if (videoSliderDots) {
       for (let i = 0; i <= maxSlide(); i++) {
