@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khushi Mehndi Artist — Beautiful mehndi designs for every occasion. Bridal mehndi, engagement, baby shower & more. Home service available. Book your appointment today!">
+    <meta name="keywords" content="mehndi artist, bridal mehndi, henna design, engagement mehndi, baby shower mehndi, home service mehndi, mehndi products">
+    <meta name="author" content="Khushi Mehndi Artist">
+    <title>Khushi Mehndi Artist — Beautiful Mehndi Designs for Every Occasion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="qrcode.min.js"></script>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">✿</span>
+                <span class="logo-text">Khushi<span class="logo-accent">Mehndi</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#courses" class="nav-link">Courses</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#video" class="nav-link">Video</a></li>
+                <li><a href="#products" class="nav-link">Shop</a></li>
+                <li><a href="#booking" class="nav-link">Book Now</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle Language" data-lang="en">
+                    <span class="lang-text">EN</span>
+                    <i class="fas fa-language"></i>
+                </button>
+                <button class="cart-toggle nav-cart" id="cartToggle" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-label">Cart</span>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <a href="#booking" class="btn btn-primary nav-cta">Book Now</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <canvas id="goldDust"></canvas>
+        <div class="hero-overlay"></div>
+        <!-- Animated floating particles -->
+        <div class="hero-particles">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
+            <div class="particle p5"></div>
+            <div class="particle p6"></div>
+            <div class="particle p7"></div>
+            <div class="particle p8"></div>
+        </div>
+        <div class="hero-decorative">
+            <div class="deco-circle deco-1"></div>
+            <div class="deco-circle deco-2"></div>
+            <div class="deco-circle deco-3"></div>
+            <svg class="deco-mandala" viewBox="0 0 200 200" width="300" height="300">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(212,168,83,0.15)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(212,168,83,0.1)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(212,168,83,0.08)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="30" fill="none" stroke="rgba(212,168,83,0.06)" stroke-width="1"/>
+            </svg>
+        </div>
+        <div class="hero-content animate-on-scroll">
+            <p class="hero-subtitle animate-text-reveal">✦ Welcome to ✦</p>
+            <h1 class="hero-title">
+                <span class="title-word" style="--delay: 0.1s">Khushi</span>
+                <span class="title-word text-gold" style="--delay: 0.3s">Mehndi</span>
+                <span class="title-word" style="--delay: 0.5s">Artist</span>
+            </h1>
+            <p class="hero-description animate-text-reveal" style="--delay: 0.7s">Beautiful Mehndi Designs for Every Occasion</p>
+            <div class="hero-features animate-text-reveal" style="--delay: 0.9s">
+                <span class="hero-feature"><i class="fas fa-palette"></i> Customization Available</span>
+                <span class="hero-feature"><i class="fas fa-home"></i> Home Service Available</span>
+            </div>
+            <div class="hero-cta animate-text-reveal" style="--delay: 1.1s">
+                <a href="#booking" class="btn btn-primary btn-lg btn-glow">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </a>
+                <a href="#gallery" class="btn btn-outline btn-lg">
+                    <i class="fas fa-images"></i> View Gallery
+                </a>
+            </div>
+        </div>
+        <a href="#services" class="hero-scroll-indicator" id="scrollDownBtn">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle">What We Offer</p>
+                <h2 class="section-title">Our <span class="text-gold">Services</span></h2>
+                <p class="section-desc">From intricate bridal designs to elegant party mehndi — we create art that tells your story</p>
+            </div>
+            <div class="services-grid stagger-children">
+                <!-- Service Card 1 -->
+                <div class="service-card animate-on-scroll" data-service="bridal">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="service-name">Bridal Mehndi</h3>
+                    <p class="service-desc">Exquisite full-hand & full-feet bridal mehndi with personalized designs including couple portraits, wedding motifs & more</p>
+                    <div class="service-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">₹8,000</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Full hands & feet coverage</li>
+                        <li><i class="fas fa-check"></i> Personalized couple portraits</li>
+                        <li><i class="fas fa-check"></i> Premium organic mehndi</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline service-btn">Book Now</a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card animate-on-scroll" data-service="engagement">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="service-name">Engagement Mehndi</h3>
+                    <p class="service-desc">Elegant and sophisticated mehndi designs perfect for your engagement ceremony and ring ceremony celebrations</p>
+                    <div class="service-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">₹5,000</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Stylish modern designs</li>
+                        <li><i class="fas fa-check"></i> Ring ceremony specials</li>
+                        <li><i class="fas fa-check"></i> Custom name integration</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline service-btn">Book Now</a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card animate-on-scroll" data-service="babyshower">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="service-name">Baby Shower Mehndi</h3>
+                    <p class="service-desc">Beautiful and joyful mehndi designs to celebrate the arrival of your little one with unique baby-themed patterns</p>
+                    <div class="service-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">₹3,000</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Cute baby-themed designs</li>
+                        <li><i class="fas fa-check"></i> Mom-to-be specials</li>
+                        <li><i class="fas fa-check"></i> Group booking available</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline service-btn">Book Now</a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card animate-on-scroll" data-service="other">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="service-name">Other Occasions</h3>
+                    <p class="service-desc">Festivals, Karva Chauth, Teej, Diwali, parties & any celebration — beautiful mehndi for every moment</p>
+                    <div class="service-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">₹800</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Festival specials</li>
+                        <li><i class="fas fa-check"></i> Arabic & Indo-Arabic styles</li>
+                        <li><i class="fas fa-check"></i> Quick party designs</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-outline service-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COURSES SECTION ========== -->
+    <section class="section section-alt" id="courses">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle">Learn Mehndi</p>
+                <h2 class="section-title">Mehndi <span class="text-gold">Courses</span></h2>
+                <p class="section-desc">Join a guided monthly course and learn beautiful henna art from beginner to advanced level with flexible home visit options.</p>
+            </div>
+            <div class="course-grid">
+                <article class="course-card service-card animate-on-scroll">
+                    <img class="course-image" src="course/WhatsApp Image 2026-07-05 at 11.13.05 AM.jpeg" alt="Beginner mehndi course" loading="lazy">
+                    <div class="course-content">
+                        <span class="course-badge">Beginner</span>
+                        <h3 class="course-title">Beginner Course</h3>
+                        <p class="course-description">Perfect for first-time learners. Discover basic patterns, simple flowers, and hand-practice techniques step by step.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> Duration: 1 month</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Non-home visit: ₹3,000</li>
+                            <li><i class="fas fa-home"></i> Home visit: ₹6,000</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline course-btn" data-course="Beginner Course" data-price="3000" data-home-price="6000">Enroll Now</a>
+                    </div>
+                </article>
+
+                <article class="course-card service-card animate-on-scroll">
+                    <img class="course-image" src="course/WhatsApp Image 2026-07-05 at 11.13.05 AM (1).jpeg" alt="Intermediate mehndi course" loading="lazy">
+                    <div class="course-content">
+                        <span class="course-badge">Intermediate</span>
+                        <h3 class="course-title">Intermediate Course</h3>
+                        <p class="course-description">Build confidence with fuller motifs, better symmetry, and more detailed bridal-style patterns.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> Duration: 1 month</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Non-home visit: ₹5,000</li>
+                            <li><i class="fas fa-home"></i> Home visit: ₹8,000</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline course-btn" data-course="Intermediate Course" data-price="5000" data-home-price="8000">Enroll Now</a>
+                    </div>
+                </article>
+
+                <article class="course-card service-card animate-on-scroll">
+                    <img class="course-image" src="course/Screenshot 2026-07-05 151740.png" alt="Advanced mehndi course" loading="lazy">
+                    <div class="course-content">
+                        <span class="course-badge">Advanced</span>
+                        <h3 class="course-title">Advanced Course</h3>
+                        <p class="course-description">Perfect for passionate learners ready for detailed bridal and event designs with polished finishing.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> Duration: 1 month</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Non-home visit: ₹7,000</li>
+                            <li><i class="fas fa-home"></i> Home visit: ₹10,000</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline course-btn" data-course="Advanced Course" data-price="7000" data-home-price="10000">Enroll Now</a>
+                    </div>
+                </article>
+
+                <article class="course-card service-card animate-on-scroll">
+                    <img class="course-image" src="course/WhatsApp Image 2026-07-05 at 11.13.05 AM.jpeg" alt="Beginner to advanced mehndi course" loading="lazy">
+                    <div class="course-content">
+                        <span class="course-badge">Complete</span>
+                        <h3 class="course-title">Beginner to Advanced</h3>
+                        <p class="course-description">A complete 1-month journey from basics to advanced techniques, ideal for serious learners who want strong fundamentals.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> Duration: 1 month</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Non-home visit: ₹8,000</li>
+                            <li><i class="fas fa-home"></i> Home visit: ₹11,000</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline course-btn" data-course="Beginner to Advanced Course" data-price="8000" data-home-price="11000">Enroll Now</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section class="section section-alt" id="gallery">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle">Our Work</p>
+                <h2 class="section-title">Mehndi <span class="text-gold">Gallery</span></h2>
+                <p class="section-desc">Browse our collection of beautiful mehndi designs crafted with love and artistry</p>
+            </div>
+            <div class="gallery-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bridal">Bridal</button>
+                <button class="filter-btn" data-filter="engagement">Engagement</button>
+                <button class="filter-btn" data-filter="baby-shower">Baby Shower</button>
+                <button class="filter-btn" data-filter="occasion">Other Occasions</button>
+            </div>
+            <div class="gallery-grid">
+                <!-- Bridal images (new real ones) -->
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/bridal-real-1.jpeg" alt="Bridal Mehndi - Intricate full hand design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/bridal-real-2.jpeg" alt="Bridal Mehndi - Detailed bridal henna art" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/bridal-real-3.jpeg" alt="Bridal Mehndi - Elegant bridal pattern" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/bridal-real-4.jpeg" alt="Bridal Mehndi - Premium wedding design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <!-- Original bridal images -->
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/real-bridal-1.jpeg" alt="Bridal Mehndi - Traditional bridal pattern" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/real-bridal-2.jpeg" alt="Bridal Mehndi - Full arms design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/real-bridal-3.jpeg" alt="Bridal Mehndi - Couple portrait henna" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/real-bridal-4.jpeg" alt="Bridal Mehndi - Wedding motif design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Bridal Mehndi</span>
+                    </div>
+                </div>
+                <!-- Other occasion images -->
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/occasion-real-1.jpeg" alt="Festival Mehndi - Beautiful occasion design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Other Occasion</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/occasion-real-2.jpeg" alt="Party Mehndi - Elegant celebration pattern" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Other Occasion</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/occasion-real-3.jpeg" alt="Festival Mehndi - Traditional design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Other Occasion</span>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/occasion-real-4.jpeg" alt="Celebration Mehndi - Beautiful pattern" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Other Occasion</span>
+                    </div>
+                </div>
+                <!-- Engagement Images -->
+                <div class="gallery-item animate-on-scroll" data-category="engagement">
+                    <img src="images/engagement-image-1.jpeg" alt="Engagement Mehndi" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Engagement Mehndi</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="engagement">
+                    <img src="images/engagement-image-2.jpeg" alt="Engagement Mehndi" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Engagement Mehndi</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="engagement">
+                    <img src="images/engagement-image-3.jpeg" alt="Engagement Mehndi" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Engagement Mehndi</span></div>
+                </div>
+                <!-- Extra Gallery Images -->
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-1.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-2.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-3.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-4.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-5.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-6.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-7.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-8.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-9.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-10.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-11.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-12.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-13.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-14.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-15.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-16.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="bridal">
+                    <img src="images/extra-image-17.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="occasion">
+                    <img src="images/extra-image-18.jpeg" alt="Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Mehndi Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="baby-shower">
+                    <img src="images/baby-shower-1.jpeg" alt="Baby Shower Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Baby Shower Art</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="baby-shower">
+                    <img src="images/baby-shower-2.jpeg" alt="Baby Shower Mehndi Art" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i><span>Baby Shower Art</span></div>
+                </div>
+            </div>
+            
+            <div class="load-more-container animate-on-scroll" style="text-align: center; margin-top: var(--sp-2xl);">
+                    <button class="btn btn-primary" id="loadMoreBtn">More Images</button>
+                    <button class="btn btn-secondary" id="galleryCollapseBtn" type="button" style="display:none; margin-left: 0.75rem;">Show less</button>
+                </div>
+    </section>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image" id="lightboxImg">
+        </div>
+    </div>
+
+    <!-- ========== VIDEO SECTION ========== -->
+    <section class="section video-section" id="video">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Watch Our Work</p>
+                <h2 class="section-title" style="color: #fff;">Demo <span class="text-gold">Videos</span></h2>
+                <p class="section-desc" style="color: rgba(255,255,255,0.6);">See the artistry come alive — watch our mehndi application process</p>
+            </div>
+            <div class="video-slider-wrapper animate-on-scroll">
+                <div class="video-slider" id="videoSlider">
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/demo-video-1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/demo-video-2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/demo-video-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/demo-video-4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/demo-video-5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/demo-video-6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-slide">
+                        <video autoplay muted loop playsinline>
+                            <source src="images/extra-video-1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="video-slider-dots" id="videoSliderDots"></div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCTS SECTION ========== -->
+    <section class="section section-alt" id="products">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle">Our Products</p>
+                <h2 class="section-title">Mehndi <span class="text-gold">Shop</span></h2>
+                <p class="section-desc">Premium quality mehndi products delivered to your doorstep</p>
+            </div>
+            <div class="products-grid stagger-children">
+                <!-- Product 1 -->
+                <div class="product-card animate-on-scroll" data-product-id="1">
+                    <div class="product-image">
+                        <img src="images/product-cones.png" alt="Premium Mehndi Cones Pack" loading="lazy">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Mehndi Cones</h3>
+                        <p class="product-desc">Pack of 12 natural henna cones for dark, long-lasting stain</p>
+                        <div class="product-price">₹299</div>
+                        <button class="btn btn-primary add-to-cart"
+                            data-id="1"
+                            data-name="Premium Mehndi Cones (Pack of 12)"
+                            data-price="299"
+                            data-image="images/product-cones.png">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card animate-on-scroll" data-product-id="2">
+                    <div class="product-image">
+                        <img src="images/product-powder.png" alt="Natural Henna Powder" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Natural Henna Powder</h3>
+                        <p class="product-desc">500g pure henna powder for rich, natural color</p>
+                        <div class="product-price">₹530</div>
+                        <button class="btn btn-primary add-to-cart"
+                            data-id="2"
+                            data-name="Natural Henna Powder (500g)"
+                            data-price="530"
+                            data-image="images/product-powder.png">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card animate-on-scroll" data-product-id="3">
+                    <div class="product-image">
+                        <img src="images/product-oil.png" alt="Mehndi Oil 100g" loading="lazy">
+                        <div class="product-badge new">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mehndi Oil (100g)</h3>
+                        <p class="product-desc">Dark stain enhancer oil for deeper, richer mehndi color</p>
+                        <div class="product-price">₹380</div>
+                        <button class="btn btn-primary add-to-cart"
+                            data-id="3"
+                            data-name="Mehndi Oil 100g - Dark Stain Enhancer"
+                            data-price="380"
+                            data-image="images/product-oil.png">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close Cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="#products" class="btn btn-outline" id="shopNowBtn">Shop Now</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-amount" id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary cart-checkout" id="cartCheckout">
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- ========== CHECKOUT MODAL ========== -->
+    <div class="checkout-overlay" id="checkoutOverlay"></div>
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button class="checkout-close" id="checkoutClose" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <!-- Step Indicators -->
+        <div class="checkout-steps">
+            <div class="checkout-step active" data-step="1">
+                <div class="step-num">1</div>
+                <span class="step-name">Details</span>
+            </div>
+            <div class="checkout-step-line"></div>
+            <div class="checkout-step" data-step="2">
+                <div class="step-num">2</div>
+                <span class="step-name">Payment</span>
+            </div>
+            <div class="checkout-step-line"></div>
+            <div class="checkout-step" data-step="3">
+                <div class="step-num">3</div>
+                <span class="step-name">Confirm</span>
+            </div>
+        </div>
+
+        <!-- Step 1: Customer Details -->
+        <div class="checkout-step-content active" id="checkoutStep1">
+            <form id="checkoutDetailsForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="checkoutName">Full Name *</label>
+                        <input type="text" id="checkoutName" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutPhone">Phone *</label>
+                        <input type="tel" id="checkoutPhone" placeholder="+91 98765 43210" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutEmail">Email</label>
+                    <input type="email" id="checkoutEmail" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="checkoutAddress">Delivery Address *</label>
+                    <textarea id="checkoutAddress" placeholder="House/Flat No., Street, City, PIN Code" rows="3" required></textarea>
+                    <button type="button" class="btn loc-detect-btn" id="checkoutLocDetect">
+                        <i class="fas fa-map-marker-alt" style="color: #ff3b30;"></i> loc_detect
+                    </button>
+                </div>
+                <div class="checkout-actions">
+                    <button type="button" class="btn btn-outline" id="checkoutCancel1">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="checkoutNext1">Next → Payment</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Step 2: Payment Method -->
+        <div class="checkout-step-content" id="checkoutStep2">
+            <h3>Select Payment Method</h3>
+            <div class="payment-options">
+                <div class="payment-option" data-method="upi">
+                    <input type="radio" id="paymentUpi" name="paymentMethod" value="upi">
+                    <label for="paymentUpi" class="payment-option-label">
+                        <div class="payment-icon"><i class="fas fa-qrcode"></i></div>
+                        <div class="payment-details">
+                            <h4>UPI / Google Pay / PhonePe</h4>
+                            <p>Scan QR code to pay instantly</p>
+                        </div>
+                    </label>
+                </div>
+                <div class="payment-option" data-method="cod">
+                    <input type="radio" id="paymentCod" name="paymentMethod" value="cod" checked>
+                    <label for="paymentCod" class="payment-option-label">
+                        <div class="payment-icon"><i class="fas fa-wallet"></i></div>
+                        <div class="payment-details">
+                            <h4>Cash on Delivery (COD)</h4>
+                            <p>Pay when your order is delivered</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- UPI QR Code Section -->
+            <div class="upi-qr-section" id="upiQrSection">
+                <div class="qr-container">
+                    <h4>Scan to pay</h4>
+                    <div id="upiQrCode" class="qr-code"></div>
+                    <p class="qr-upi-id">UPI: 8116821602@axl</p>
+                </div>
+            </div>
+
+            <div class="checkout-actions">
+                <button type="button" class="btn btn-outline" id="checkoutBack2">← Back</button>
+                <button type="button" class="btn btn-primary" id="checkoutNext2">Next → Review</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Order Confirmation -->
+        <div class="checkout-step-content" id="checkoutStep3">
+            <h3>Order Summary</h3>
+            <div class="order-summary" id="orderSummary"></div>
+            <div class="checkout-actions">
+                <button type="button" class="btn btn-outline" id="checkoutBack3">← Back</button>
+                <button type="button" class="btn btn-primary" id="checkoutConfirm">
+                    <i class="fab fa-whatsapp"></i> Confirm & Send to WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== BOOKING SECTION ========== -->
+    <section class="section" id="booking">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle">Ready to Book?</p>
+                <h2 class="section-title">Book Your <span class="text-gold">Appointment</span></h2>
+                <p class="section-desc">Fill in the details below and we'll confirm your booking via WhatsApp</p>
+            </div>
+
+            <div class="booking-form-wrapper animate-on-scroll">
+                <!-- Step Indicators -->
+                <div class="booking-steps">
+                    <div class="step-indicator active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Service</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Location</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Date & Time</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="4">
+                        <div class="step-circle">4</div>
+                        <span class="step-label">Details</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="5">
+                        <div class="step-circle">5</div>
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+
+                <form class="booking-form" id="bookingForm">
+                    <!-- Step 1: Service Selection -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="step-title">Choose Your Service</h3>
+                        <div class="service-options">
+                            <label class="service-option">
+                                <input type="radio" name="service" value="Bridal Mehndi" required>
+                                <div class="option-card">
+                                    <i class="fas fa-crown"></i>
+                                    <span class="option-name">Bridal Mehndi</span>
+                                    <span class="option-price">from ₹8,000</span>
+                                </div>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="service" value="Engagement Mehndi">
+                                <div class="option-card">
+                                    <i class="fas fa-ring"></i>
+                                    <span class="option-name">Engagement Mehndi</span>
+                                    <span class="option-price">from ₹5,000</span>
+                                </div>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="service" value="Baby Shower Mehndi">
+                                <div class="option-card">
+                                    <i class="fas fa-baby"></i>
+                                    <span class="option-name">Baby Shower Mehndi</span>
+                                    <span class="option-price">from ₹3,000</span>
+                                </div>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="service" value="Other Occasion">
+                                <div class="option-card">
+                                    <i class="fas fa-star"></i>
+                                    <span class="option-name">Other Occasion</span>
+                                    <span class="option-price">from ₹800</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Location Preference -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="step-title">Where Should We Meet?</h3>
+                        <div class="location-options">
+                            <label class="location-option">
+                                <input type="radio" name="location" value="visit_artist" required>
+                                <div class="location-card">
+                                    <div class="location-icon">
+                                        <i class="fas fa-store"></i>
+                                    </div>
+                                    <h4>I'll Visit the Artist</h4>
+                                    <p>Come to our studio for your mehndi session</p>
+                                    <div class="studio-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Contact us for studio address</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="location-option">
+                                <input type="radio" name="location" value="home_service">
+                                <div class="location-card">
+                                    <div class="location-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <h4>Home Service</h4>
+                                    <p>Our artist will come to your location</p>
+                                    <div class="home-service-tag">
+                                        <i class="fas fa-truck"></i> We come to you!
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- Address form - shows when home service selected -->
+                        <div class="address-form" id="addressForm" style="display: none;">
+                            <h4 class="address-title"><i class="fas fa-map-marker-alt"></i> Your Address</h4>
+                            <!-- Precise Location Button -->
+                            <button type="button" class="precise-location-btn" id="preciseLocationBtn">
+                                <i class="fas fa-crosshairs"></i>
+                                <div>
+                                    <span>Use Precise Location</span>
+                                    <small>Auto-detect your current address</small>
+                                </div>
+                            </button>
+                            <div class="location-status" id="locationStatus" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span id="locationStatusText">Detecting your location...</span>
+                            </div>
+                            <div class="divider-or">
+                                <span>or fill manually</span>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="address">Full Address <span class="required">*</span></label>
+                                    <textarea id="address" name="address" placeholder="House/Flat No., Street, Area, Colony..." rows="2"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City <span class="required">*</span></label>
+                                    <input type="text" id="city" name="city" placeholder="Enter your city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincode">Pincode <span class="required">*</span></label>
+                                    <input type="text" id="pincode" name="pincode" placeholder="6-digit pincode" maxlength="6" pattern="[0-9]{6}">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="landmark">Landmark (Optional)</label>
+                                    <input type="text" id="landmark" name="landmark" placeholder="Near, opposite, behind...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Date & Time -->
+                    <div class="form-step" data-step="3">
+                        <h3 class="step-title">Pick a Date & Time</h3>
+                        <div class="form-grid datetime-grid">
+                            <div class="form-group">
+                                <label for="bookingDate">Preferred Date <span class="required">*</span></label>
+                                <input type="date" id="bookingDate" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Time Slot <span class="required">*</span></label>
+                                <div class="time-slots">
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="Morning (9AM - 12PM)" required>
+                                        <span class="slot-card">
+                                            <i class="fas fa-sun"></i>
+                                            <span>Morning</span>
+                                            <small>9AM - 12PM</small>
+                                        </span>
+                                    </label>
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="Afternoon (12PM - 3PM)">
+                                        <span class="slot-card">
+                                            <i class="fas fa-cloud-sun"></i>
+                                            <span>Afternoon</span>
+                                            <small>12PM - 3PM</small>
+                                        </span>
+                                    </label>
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="Evening (3PM - 6PM)">
+                                        <span class="slot-card">
+                                            <i class="fas fa-cloud-moon"></i>
+                                            <span>Evening</span>
+                                            <small>3PM - 6PM</small>
+                                        </span>
+                                    </label>
+                                    <label class="time-slot">
+                                        <input type="radio" name="timeSlot" value="Night (6PM - 9PM)">
+                                        <span class="slot-card">
+                                            <i class="fas fa-moon"></i>
+                                            <span>Night</span>
+                                            <small>6PM - 9PM</small>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact Details -->
+                    <div class="form-step" data-step="4">
+                        <h3 class="step-title">Your Contact Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="customerName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="customerName" name="customerName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Phone / WhatsApp <span class="required">*</span></label>
+                                <input type="tel" id="customerPhone" name="customerPhone" placeholder="10-digit mobile number" maxlength="10" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Email (Optional)</label>
+                                <input type="email" id="customerEmail" name="customerEmail" placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="guestCount">Number of Guests for Mehndi</label>
+                                <input type="number" id="guestCount" name="guestCount" placeholder="How many people?" min="1" value="1">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="specialRequests">Special Requests / Design Preferences</label>
+                                <textarea id="specialRequests" name="specialRequests" placeholder="Any special design requests, themes, or preferences..." rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Confirmation -->
+                    <div class="form-step" data-step="5">
+                        <h3 class="step-title">Confirm Your Booking</h3>
+                        <div class="booking-summary" id="bookingSummary">
+                            <div class="summary-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Booking Summary</h4>
+                            <div class="summary-details" id="summaryDetails"></div>
+                        </div>
+                    </div>
+
+                    <!-- Form Navigation -->
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline form-prev" id="formPrev" style="display: none;">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="btn btn-primary form-next" id="formNext">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary form-submit" id="formSubmit" style="display: none;">
+                            <i class="fab fa-whatsapp"></i> Confirm via WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-subtitle">Happy Clients</p>
+                <h2 class="section-title">What They <span class="text-gold">Say</span></h2>
+                <p class="section-desc">Trusted by brides, families, and event planners for elegant mehndi and smooth service.</p>
+            </div>
+
+            <div class="reviews-shell animate-on-scroll">
+                <div class="reviews-summary">
+                    <div class="rating-panel">
+                        <div class="rating-number">4.9<span>/5</span></div>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="rating-count">Based on 120+ happy customers</p>
+                        <p class="rating-copy">Customers love the detail, rich color, and professional experience from booking to completion.</p>
+                    </div>
+                    <div class="review-highlights">
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Beautiful bridal and engagement designs</span></div>
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Home service and on-time visits</span></div>
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Premium quality mehndi with long-lasting stain</span></div>
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Easy booking through WhatsApp</span></div>
+                    </div>
+                </div>
+
+                <div class="review-form-card animate-on-scroll">
+                    <div class="review-form-header">
+                        <h3>Share your experience</h3>
+                        <p>Tell us about your product purchase, course enrollment, or service experience.</p>
+                    </div>
+                    <form class="review-form" id="reviewForm">
+                        <div class="review-form-grid">
+                            <div class="form-group review-form-group">
+                                <label for="reviewerName">Your name</label>
+                                <input type="text" id="reviewerName" name="reviewerName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group review-form-group">
+                                <label for="reviewType">What did you review?</label>
+                                <select id="reviewType" name="reviewType">
+                                    <option value="Product">Product</option>
+                                    <option value="Course">Course</option>
+                                    <option value="Service">Service</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="review-form-grid">
+                            <div class="form-group review-form-group">
+                                <label for="reviewItem">Product / Course / Service name</label>
+                                <input type="text" id="reviewItem" name="reviewItem" placeholder="e.g. Beginner Course or Mehndi Cone Set">
+                            </div>
+                            <div class="form-group review-form-group">
+                                <label for="reviewTitle">Short title</label>
+                                <input type="text" id="reviewTitle" name="reviewTitle" placeholder="Give your feedback a title" required>
+                            </div>
+                        </div>
+
+                        <div class="review-rating-group">
+                            <label>Your rating</label>
+                            <div class="star-rating" id="starRating" role="radiogroup" aria-label="Select rating">
+                                <button type="button" class="star-btn active" data-value="1" aria-label="1 star"><i class="fas fa-star"></i></button>
+                                <button type="button" class="star-btn active" data-value="2" aria-label="2 stars"><i class="fas fa-star"></i></button>
+                                <button type="button" class="star-btn active" data-value="3" aria-label="3 stars"><i class="fas fa-star"></i></button>
+                                <button type="button" class="star-btn active" data-value="4" aria-label="4 stars"><i class="fas fa-star"></i></button>
+                                <button type="button" class="star-btn active" data-value="5" aria-label="5 stars"><i class="fas fa-star"></i></button>
+                            </div>
+                            <input type="hidden" id="reviewRating" name="reviewRating" value="5">
+                        </div>
+
+                        <div class="form-group review-form-group full-width">
+                            <label for="reviewText">Your review</label>
+                            <textarea id="reviewText" name="reviewText" rows="4" placeholder="Tell us about your experience..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                    </form>
+                </div>
+
+                <div class="review-filter-bar">
+                    <button class="review-filter-btn active" data-review-filter="all">All Reviews</button>
+                    <button class="review-filter-btn" data-review-filter="Product">Products</button>
+                    <button class="review-filter-btn" data-review-filter="Service">Services</button>
+                    <button class="review-filter-btn" data-review-filter="Course">Courses</button>
+                </div>
+                <div class="reviews-grid" id="reviewsGrid"></div>
+                <div class="review-load-more-wrap">
+                    <button class="btn btn-primary review-load-more" id="reviewLoadMore" type="button">See more reviews</button>
+                    <button class="btn btn-secondary review-collapse" id="reviewCollapse" type="button" style="display:none;">Show less</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER / CONTACT ========== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon">✿</span>
+                        <span class="logo-text">Khushi<span class="logo-accent">Mehndi</span></span>
+                    </div>
+                    <p class="footer-about">Beautiful mehndi designs for every occasion. Bringing art to your hands with love, creativity, and years of expertise.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/kmehndiartist12" target="_blank" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/918116821602" target="_blank" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+918116821602" aria-label="Phone" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Bridal Mehndi</a></li>
+                        <li><a href="#services">Engagement Mehndi</a></li>
+                        <li><a href="#services">Baby Shower Mehndi</a></li>
+                        <li><a href="#services">Festival Mehndi</a></li>
+                        <li><a href="#services">Bridal Makeup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i><a href="tel:+918116821602">+91 81168 21602</a></li>
+                        <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/918116821602">WhatsApp Us</a></li>
+                        <li><i class="fab fa-instagram"></i><a href="https://instagram.com/kmehndiartist12" target="_blank">@kmehndiartist12</a></li>
+                        <li><i class="fas fa-clock"></i><span>Available: 9 AM - 9 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Khushi Mehndi Artist. All Rights Reserved.</p>
+                <p>Made with <i class="fas fa-heart text-gold"></i> for beautiful mehndi art</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
+    <a href="https://wa.me/918116821602?text=Hi!%20I'm%20interested%20in%20booking%20mehndi%20services."
+       class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp" id="whatsappFloat">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- ========== TOAST NOTIFICATION ========== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ========== COURSE ENROLL MODAL ========== -->
+    <div class="modal-overlay" id="courseEnrollOverlay" aria-hidden="true">
+        <div class="course-modal" role="dialog" aria-modal="true" aria-labelledby="courseModalTitle">
+            <button type="button" class="modal-close" id="courseModalClose" aria-label="Close enrollment form">×</button>
+            <div class="course-modal-header">
+                <h3 id="courseModalTitle">Enroll in Course</h3>
+                <p id="selectedCourseName" class="course-modal-subtitle">Choose your service type</p>
+            </div>
+            <form id="courseEnrollForm" class="course-enroll-form">
+                <div class="modal-step" data-step="1">
+                    <p class="modal-step-label">Choose your service type</p>
+                    <label class="modal-radio">
+                        <input type="radio" name="courseLocation" value="Non-home visit" checked>
+                        <span>Non-home service</span>
+                    </label>
+                    <label class="modal-radio">
+                        <input type="radio" name="courseLocation" value="Home visit">
+                        <span>Home service</span>
+                    </label>
+                    <button type="button" class="btn btn-primary modal-next">Next</button>
+                </div>
+                <div class="modal-step" data-step="2">
+                    <p class="modal-step-label">Your name and preferred month</p>
+                    <div class="form-group">
+                        <input type="text" id="courseUserName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="courseMonth" required>
+                            <option value="" disabled selected>Select preferred month</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary modal-back">Back</button>
+                        <button type="button" class="btn btn-primary modal-next">Next</button>
+                    </div>
+                </div>
+                <div class="modal-step" data-step="3">
+                    <p class="modal-step-label">Provide your address and city pincode</p>
+                    <div class="form-group">
+                        <textarea id="courseAddress" placeholder="Full location/address for home service (required only if home service selected)" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="coursePincode" placeholder="City pincode" inputmode="numeric" pattern="[0-9]*" maxlength="6">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary modal-back">Back</button>
+                        <button type="submit" class="btn btn-primary modal-submit">Send to WhatsApp</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Translate Hidden Widget -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
