@@ -1965,5 +1965,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ==========================================================
+  //  WEBSITE FEEDBACK LOGIC
+  // ==========================================================
+  const sendFeedbackBtn = document.getElementById('sendFeedbackBtn');
+  const feedbackText = document.getElementById('feedbackText');
+  
+  if (sendFeedbackBtn && feedbackText) {
+    sendFeedbackBtn.addEventListener('click', () => {
+      const text = feedbackText.value.trim();
+      if (!text) {
+        showNotification('Please write some feedback before sending!', 'error');
+        return;
+      }
+      
+      const msg = `*Website Feedback / Suggestion* ✨\n\n"${text}"\n\n-- Sent directly from the website.`;
+      // User explicitly requested to send feedback to this specific number: 6294975338
+      const waLink = `https://wa.me/916294975338?text=${encodeURIComponent(msg)}`;
+      window.open(waLink, '_blank');
+      
+      feedbackText.value = ''; // clear form
+      showNotification('Opening WhatsApp to send your feedback...');
+    });
+  }
+
   console.log('✨ Khushi Mehndi Artist ✨ website loaded with premium effects');
 });

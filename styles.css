@@ -2634,6 +2634,65 @@ body {
 /* ============================================================
    14. FOOTER
    ============================================================ */
+/* ========== FEEDBACK SECTION ========== */
+.feedback-section {
+  background: var(--clr-cream);
+  padding: 4rem 0;
+}
+
+.feedback-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: 0 15px 35px rgba(var(--clr-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--clr-gold-rgb), 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--clr-gold);
+}
+
+.feedback-content h2 {
+  color: var(--clr-primary);
+}
+
+.feedback-content p {
+  color: var(--clr-brown);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.feedback-form textarea {
+  resize: vertical;
+  background: var(--clr-cream);
+  border: 1px solid rgba(var(--clr-brown-rgb), 0.2);
+}
+
+.feedback-form textarea:focus {
+  border-color: var(--clr-gold);
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .feedback-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
 .footer {
   background: linear-gradient(180deg, var(--clr-burgundy) 0%, #2D0610 100%);
   color: rgba(255, 255, 255, 0.75);
