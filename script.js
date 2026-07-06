@@ -1410,9 +1410,30 @@ document.addEventListener('DOMContentLoaded', () => {
       <p class="review-text">${review.text}</p>
       <div class="review-footer">
         <span>${review.date || 'Just now'}</span>
-        <button class="review-helpful" type="button">Helpful · ${review.helpful || 1}</button>
+        <button class="review-helpful" type="button">Helpful · <span class="helpful-count">${review.helpful || 1}</span></button>
       </div>
     `;
+
+    // Helpful button logic
+    const helpfulBtn = card.querySelector('.review-helpful');
+    const helpfulCountSpan = card.querySelector('.helpful-count');
+    let isLiked = false;
+    let currentCount = review.helpful || 1;
+
+    helpfulBtn.addEventListener('click', () => {
+      if (!isLiked) {
+        isLiked = true;
+        currentCount++;
+        helpfulCountSpan.textContent = currentCount;
+        helpfulBtn.classList.add('liked');
+      } else {
+        isLiked = false;
+        currentCount--;
+        helpfulCountSpan.textContent = currentCount;
+        helpfulBtn.classList.remove('liked');
+      }
+    });
+
     return card;
   };
 
