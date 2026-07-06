@@ -134,14 +134,48 @@ document.addEventListener('DOMContentLoaded', () => {
     window.requestAnimationFrame(step);
   };
 
+  const loadGlobalStats = async () => {
+    const docRef = db.collection('globalStats').doc('main');
+    try {
+      const docSnap = await docRef.get();
+      let numOrders = 150, numServices = 520, numCourses = 85;
+      
+      if (docSnap.exists) {
+        const data = docSnap.data();
+        numOrders = (data.orders || 0) + 150;
+        numServices = (data.services || 0) + 520;
+        numCourses = (data.courses || 0) + 85;
+      } else {
+        await docRef.set({ orders: 0, services: 0, courses: 0 });
+      }
+
+      // Use IntersectionObserver to animate only when scrolled into view
+      const statsSection = document.getElementById('globalStats');
+      if (!statsSection) return;
+      
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          animateValue(document.getElementById('statOrders'), 0, numOrders, 2000);
+          animateValue(document.getElementById('statServices'), 0, numServices, 2000);
+          animateValue(document.getElementById('statCourses'), 0, numCourses, 2000);
+          observer.disconnect();
+        }
+      }, { threshold: 0.3 });
+      
+      observer.observe(statsSection);
+    } catch (e) {
+      console.error("Failed to load global stats: ", e);
+    }
+  };
+
+  loadGlobalStats();
+
   const showStatsModal = async (type) => {
-    if (!statsOverlay) return;
-    statsOverlay.classList.add('open');
+    if (statsOverlay) statsOverlay.classList.add('open');
     
     const docRef = db.collection('globalStats').doc('main');
-    
     try {
-      // Increment based on action
+      // Increment based on action in the background
       if (type === 'order') {
         await docRef.set({ orders: firebase.firestore.FieldValue.increment(1) }, { merge: true });
       } else if (type === 'service') {
@@ -149,25 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (type === 'course') {
         await docRef.set({ courses: firebase.firestore.FieldValue.increment(1) }, { merge: true });
       }
-      
-      // Fetch latest numbers to animate
-      const docSnap = await docRef.get();
-      if (docSnap.exists) {
-        const data = docSnap.data();
-        // Fallbacks so it looks impressive even on day 1
-        const numOrders = (data.orders || 0) + 150;
-        const numServices = (data.services || 0) + 520;
-        const numCourses = (data.courses || 0) + 85;
-
-        animateValue(document.getElementById('statOrders'), 0, numOrders, 2000);
-        animateValue(document.getElementById('statServices'), 0, numServices, 2000);
-        animateValue(document.getElementById('statCourses'), 0, numCourses, 2000);
-      } else {
-        // Initialize if empty
-        await docRef.set({ orders: 0, services: 0, courses: 0 });
-      }
     } catch (e) {
-      console.error("Stats Error: ", e);
+      console.error("Stats Update Error: ", e);
     }
   };
 

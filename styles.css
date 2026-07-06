@@ -5026,21 +5026,19 @@ body {
   background: rgba(var(--clr-primary-rgb), 0.2);
 }
 
-.stats-divider span {
-  position: relative;
+.global-stats-section {
+  padding: 4rem 0 2rem;
   background: var(--clr-cream);
-  padding: 0 1rem;
-  color: var(--clr-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
 }
 
-.stats-grid {
+.global-stats-section .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .stat-box {
