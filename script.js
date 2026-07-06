@@ -771,6 +771,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentCheckoutStep = 1;
 
   const openCheckout = () => {
+    closeCart(); // Close the cart sidebar first to prevent overlay issues on mobile
     const modal = document.getElementById('checkoutModal');
     const overlay = document.getElementById('checkoutOverlay');
     if (modal && overlay) {
