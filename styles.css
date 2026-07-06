@@ -106,8 +106,9 @@
 html {
   font-size: var(--fs-base);
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 body {
@@ -117,6 +118,8 @@ body {
   color: var(--clr-brown);
   background-color: var(--clr-cream);
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
