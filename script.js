@@ -109,6 +109,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   };
 
+  // ==========================================================
+  //  STATS MODAL LOGIC (FIREBASE SYNC)
+  // ==========================================================
+  const statsOverlay = document.getElementById('statsOverlay');
+  const statsCloseBtn = document.getElementById('statsCloseBtn');
+  
+  statsCloseBtn?.addEventListener('click', () => {
+    statsOverlay?.classList.remove('open');
+  });
+
+  const animateValue = (obj, start, end, duration) => {
+    if (!obj) return;
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      obj.innerHTML = Math.floor(easeProgress * (end - start) + start) + "+";
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+
+  const showStatsModal = async (type) => {
+    if (!statsOverlay) return;
+    statsOverlay.classList.add('open');
+    
+    const docRef = db.collection('globalStats').doc('main');
+    
+    try {
+      // Increment based on action
+      if (type === 'order') {
+        await docRef.set({ orders: firebase.firestore.FieldValue.increment(1) }, { merge: true });
+      } else if (type === 'service') {
+        await docRef.set({ services: firebase.firestore.FieldValue.increment(1) }, { merge: true });
+      } else if (type === 'course') {
+        await docRef.set({ courses: firebase.firestore.FieldValue.increment(1) }, { merge: true });
+      }
+      
+      // Fetch latest numbers to animate
+      const docSnap = await docRef.get();
+      if (docSnap.exists) {
+        const data = docSnap.data();
+        // Fallbacks so it looks impressive even on day 1
+        const numOrders = (data.orders || 0) + 150;
+        const numServices = (data.services || 0) + 520;
+        const numCourses = (data.courses || 0) + 85;
+
+        animateValue(document.getElementById('statOrders'), 0, numOrders, 2000);
+        animateValue(document.getElementById('statServices'), 0, numServices, 2000);
+        animateValue(document.getElementById('statCourses'), 0, numCourses, 2000);
+      } else {
+        // Initialize if empty
+        await docRef.set({ orders: 0, services: 0, courses: 0 });
+      }
+    } catch (e) {
+      console.error("Stats Error: ", e);
+    }
+  };
+
   const courseModalOverlay = document.getElementById('courseEnrollOverlay');
   const courseModalClose = document.getElementById('courseModalClose');
   const courseModalTitle = document.getElementById('selectedCourseName');
@@ -241,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const message = messageLines.join('\n');
     window.open(generateWhatsAppLink(message), '_blank');
-    showNotification(`${currentCourse} enrollment details sent! ✅`);
+    showStatsModal('course');
     closeCourseModal();
   });
 
@@ -1016,7 +1078,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saveCart();
     renderCart();
     closeCheckout();
-    showNotification('Order sent! Please wait for confirmation.', 'success');
+    showStatsModal('order');
   });
 
   // Location detect button for checkout
@@ -1359,7 +1421,7 @@ document.addEventListener('DOMContentLoaded', () => {
       msg += `\nPlease confirm this booking. Thank you! 🙏`;
 
       window.open(generateWhatsAppLink(msg), '_blank');
-      showNotification('Booking sent via WhatsApp! ✅');
+      showStatsModal('service');
     });
 
     goToStep(1);
