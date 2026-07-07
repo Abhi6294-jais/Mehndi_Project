@@ -138,13 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const docRef = db.collection('globalStats').doc('main');
     try {
       const docSnap = await docRef.get();
-      let numOrders = 150, numServices = 520, numCourses = 85;
+      let numOrders = 150, numServices = 520, numCourses = 50;
       
       if (docSnap.exists) {
         const data = docSnap.data();
         numOrders = (data.orders || 0) + 150;
         numServices = (data.services || 0) + 520;
-        numCourses = (data.courses || 0) + 85;
+        numCourses = (data.courses || 0) + 50;
       } else {
         await docRef.set({ orders: 0, services: 0, courses: 0 });
       }
