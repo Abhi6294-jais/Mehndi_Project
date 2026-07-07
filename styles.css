@@ -3008,15 +3008,8 @@ body {
   .step-line {
     width: 50px;
   }
-}
 
-/* ── Tablet portrait / mobile landscape ────────────────────── */
-@media (max-width: 768px) {
-  :root {
-    --sp-section: 3rem;
-  }
-
-  /* Nav → hamburger */
+  /* Nav → hamburger for Tablets */
   .hamburger {
     display: flex;
   }
@@ -3068,6 +3061,13 @@ body {
   
   .nav-actions {
     gap: 0.8rem;
+  }
+}
+
+/* ── Tablet portrait / mobile landscape ────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --sp-section: 3rem;
   }
 
   /* Hero */
