@@ -1989,5 +1989,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================================
+  //  MOBILE AUTO-HOVER EFFECT
+  // ==========================================================
+  // On mobile/tablet, automatically apply hover effects when cards scroll into view
+  if (window.innerWidth <= 1024) {
+    const hoverObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // When the card is at least 50% visible, trigger the hover effect
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mobile-hover');
+        } else {
+          entry.target.classList.remove('mobile-hover');
+        }
+      });
+    }, { threshold: 0.6 });
+
+    // Select all cards that have nice hover effects
+    const cardsToHover = document.querySelectorAll('.service-card, .course-card, .product-card, .stat-box, .gallery-item, .review-card, .location-card');
+    cardsToHover.forEach(card => hoverObserver.observe(card));
+  }
+
   console.log('✨ Khushi Mehndi Artist ✨ website loaded with premium effects');
 });
