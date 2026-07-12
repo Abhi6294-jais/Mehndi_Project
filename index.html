@@ -69,6 +69,10 @@
                     <span class="lang-text">EN</span>
                     <i class="fas fa-language"></i>
                 </button>
+                <button class="orders-toggle nav-orders" id="ordersToggle" aria-label="My Orders">
+                    <i class="fas fa-receipt"></i>
+                    <span class="cart-label">Orders</span>
+                </button>
                 <button class="cart-toggle nav-cart" id="cartToggle" aria-label="Shopping Cart">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-label">Cart</span>
@@ -686,6 +690,24 @@
             <button class="btn btn-primary cart-checkout" id="cartCheckout">
                 <i class="fab fa-whatsapp"></i> Order via WhatsApp
             </button>
+        </div>
+    </div>
+
+    <!-- ========== MY ORDERS MODAL ========== -->
+    <div class="orders-overlay" id="ordersOverlay"></div>
+    <div class="orders-modal" id="ordersModal">
+        <div class="orders-header">
+            <h3>My Orders</h3>
+            <button class="orders-close" id="ordersClose" aria-label="Close Orders">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="orders-body" id="ordersBody">
+            <!-- Order cards will be dynamically inserted here -->
+            <div class="empty-orders">
+                <i class="fas fa-box-open"></i>
+                <p>You haven't placed any orders yet.</p>
+            </div>
         </div>
     </div>
 

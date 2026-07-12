@@ -320,6 +320,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const message = messageLines.join('\n');
     window.open(generateWhatsAppLink(message), '_blank');
+    
+    if (window.saveOrderToHistory) {
+      window.saveOrderToHistory('Course', {
+        title: document.getElementById('modalCourseTitle').textContent,
+        price: selectedFee,
+        name: userName
+      });
+    }
+
     showStatsModal('course');
     closeCourseModal();
   });
@@ -1090,6 +1099,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.open(generateWhatsAppLink(msg), '_blank');
     
+    if (window.saveOrderToHistory) {
+      window.saveOrderToHistory('Product', {
+        items: cart.map(i => `${i.name} (x${i.quantity})`),
+        total: total,
+        name: checkoutData.name
+      });
+    }
+
     // Clear cart
     cart = [];
     saveCart();
@@ -1438,6 +1455,14 @@ document.addEventListener('DOMContentLoaded', () => {
       msg += `\nPlease confirm this booking. Thank you! 🙏`;
 
       window.open(generateWhatsAppLink(msg), '_blank');
+      
+      if (window.saveOrderToHistory) {
+        window.saveOrderToHistory('Service', {
+          title: service?.value,
+          name: name?.value
+        });
+      }
+      
       showStatsModal('service');
     });
 
@@ -1964,6 +1989,108 @@ document.addEventListener('DOMContentLoaded', () => {
       animateParticles();
     }
   }
+
+  // ==========================================================
+  //  MY ORDERS LOGIC
+  // ==========================================================
+  const ordersToggle = document.getElementById('ordersToggle');
+  const ordersModal = document.getElementById('ordersModal');
+  const ordersOverlay = document.getElementById('ordersOverlay');
+  const ordersClose = document.getElementById('ordersClose');
+  const ordersBody = document.getElementById('ordersBody');
+
+  const openOrdersModal = () => {
+    renderOrders();
+    ordersModal.classList.add('active');
+    ordersOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeOrdersModal = () => {
+    ordersModal.classList.remove('active');
+    ordersOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (ordersToggle) ordersToggle.addEventListener('click', openOrdersModal);
+  if (ordersClose) ordersClose.addEventListener('click', closeOrdersModal);
+  if (ordersOverlay) ordersOverlay.addEventListener('click', closeOrdersModal);
+
+  window.saveOrderToHistory = (type, details) => {
+    let history = JSON.parse(localStorage.getItem('mehndi_orders') || '[]');
+    const newOrder = {
+      id: 'ORD' + Math.floor(Math.random() * 1000000),
+      type: type,
+      details: details,
+      timestamp: new Date().getTime()
+    };
+    history.unshift(newOrder);
+    localStorage.setItem('mehndi_orders', JSON.stringify(history));
+  };
+
+  window.deleteOrderFromHistory = (orderId) => {
+    let history = JSON.parse(localStorage.getItem('mehndi_orders') || '[]');
+    history = history.filter(o => o.id !== orderId);
+    localStorage.setItem('mehndi_orders', JSON.stringify(history));
+    renderOrders();
+  };
+
+  const renderOrders = () => {
+    if (!ordersBody) return;
+    const history = JSON.parse(localStorage.getItem('mehndi_orders') || '[]');
+    
+    if (history.length === 0) {
+      ordersBody.innerHTML = `
+        <div class="empty-orders">
+            <i class="fas fa-box-open"></i>
+            <p>You haven't placed any orders yet.</p>
+        </div>
+      `;
+      return;
+    }
+
+    let html = '';
+    history.forEach(order => {
+      const dateStr = new Date(order.timestamp).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' });
+      
+      let itemsHtml = '';
+      let totalHtml = '';
+
+      if (order.type === 'Product') {
+        itemsHtml = order.details.items.map(i => `<div class="order-item-line"><span class="order-item-title"><i class="fas fa-shopping-bag"></i> ${i}</span></div>`).join('');
+        totalHtml = `<div class="order-total">₹${order.details.total}</div>`;
+      } else if (order.type === 'Course') {
+        itemsHtml = `<div class="order-item-line"><span class="order-item-title"><i class="fas fa-graduation-cap"></i> ${order.details.title}</span></div>`;
+        totalHtml = `<div class="order-total">₹${order.details.price}</div>`;
+      } else if (order.type === 'Service') {
+        itemsHtml = `<div class="order-item-line"><span class="order-item-title"><i class="fas fa-spa"></i> ${order.details.title}</span></div>`;
+      }
+
+      html += `
+        <div class="order-card">
+          <div class="order-card-header">
+            <div>
+              <div class="order-id">${order.id} <span style="font-size:0.8rem; color:var(--clr-text-light)">(${order.type})</span></div>
+              <div class="order-date">${dateStr}</div>
+            </div>
+            <button class="order-delete-btn" onclick="deleteOrderFromHistory('${order.id}')" aria-label="Delete Order" title="Remove from history">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="order-items">
+            ${itemsHtml}
+            <div class="order-item-line" style="margin-top:0.8rem"><small style="color:var(--clr-text-light)">Customer: ${order.details.name}</small></div>
+          </div>
+          <div class="order-footer">
+            <div class="order-status"><i class="fas fa-check-circle"></i> Placed</div>
+            ${totalHtml}
+          </div>
+        </div>
+      `;
+    });
+
+    ordersBody.innerHTML = html;
+  };
 
   // ==========================================================
   //  WEBSITE FEEDBACK LOGIC

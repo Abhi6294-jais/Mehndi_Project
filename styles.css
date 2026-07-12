@@ -3187,7 +3187,228 @@ body {
   .location-card.mobile-hover::before { transform: scaleX(1); }
 }
 
-/* ── Small phones ──────────────────────────────────────────── */
+/* ── My Orders Styles ───────────────────────────────────────── */
+
+.orders-toggle {
+  background: none;
+  border: none;
+  color: var(--clr-cream);
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.orders-toggle:hover {
+  color: var(--clr-gold);
+}
+
+.orders-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.orders-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.orders-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  background: var(--clr-cream);
+  border-radius: 20px;
+  z-index: 2001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.orders-modal.active {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.orders-header {
+  padding: 1.5rem 2rem;
+  background: var(--clr-burgundy);
+  color: var(--clr-cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orders-header h3 {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-family: var(--ff-serif);
+}
+
+.orders-close {
+  background: none;
+  border: none;
+  color: var(--clr-cream);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.orders-close:hover {
+  color: var(--clr-gold);
+  transform: rotate(90deg);
+}
+
+.orders-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.empty-orders {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--clr-text-light);
+}
+
+.empty-orders i {
+  font-size: 3rem;
+  color: rgba(var(--clr-gold-rgb), 0.5);
+  margin-bottom: 1rem;
+}
+
+.order-card {
+  background: #fff;
+  border: 1px solid rgba(var(--clr-gold-rgb), 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.order-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-gold);
+  transform: translateY(-2px);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(var(--clr-gold-rgb), 0.3);
+}
+
+.order-id {
+  font-weight: 600;
+  color: var(--clr-burgundy);
+  font-family: var(--ff-serif);
+  font-size: 1.1rem;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: var(--clr-text-light);
+  margin-top: 0.3rem;
+}
+
+.order-delete-btn {
+  background: none;
+  border: none;
+  color: #ff4757;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem 0 0;
+  transition: var(--transition-fast);
+  border-radius: 50%;
+}
+
+.order-delete-btn:hover {
+  background: #ff4757;
+  color: white;
+  transform: scale(1.1);
+}
+
+.order-items {
+  margin-bottom: 1rem;
+}
+
+.order-item-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-text);
+}
+
+.order-item-title {
+  flex-grow: 1;
+  padding-right: 1rem;
+}
+
+.order-item-price {
+  font-weight: 500;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(var(--clr-gold-rgb), 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.order-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2ed573;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.order-status.pending {
+  color: #ffa502;
+}
+
+.order-total {
+  font-weight: 700;
+  color: var(--clr-burgundy);
+  font-size: 1.1rem;
+}
+
+/* Small phones */
 @media (max-width: 480px) {
   :root {
     --sp-section: 2.5rem;
